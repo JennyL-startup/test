@@ -1,0 +1,19 @@
+#user login info
+url: http://localhost:8080/polls/login/
+method: POST
+headers:
+  Referer: 'http://localhost:8000/polls/show_login'
+data:
+  name: 'shiyanlou',
+  pwd: 'shiyanlou',
+  commit: 'Login'
+expect:
+  status_code: 302
+---
+url: http://localhost:8080/polls/
+method: GET
+headers:
+  Cookie: 'screenResolution=1536x864; Pycharm-cc94626e=34bfd8b3-2a44-477c-982c-069151120202; sessionid=st2mcri64rdojagwb1u8rncoi7fwqqg5',
+  Referer: 'http://localhost:8000/polls/show_login'
+expect:
+  status_code: 200
